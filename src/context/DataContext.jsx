@@ -14,7 +14,7 @@ export const DataProvider = ({ children }) => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("https://fakestoreapi.in/api/products?limit=20");
+      const response = await axios.get("https://fakestoreapi.in/api/products?limit=150");
       const productData = response.data.products;
       setData(productData); 
 

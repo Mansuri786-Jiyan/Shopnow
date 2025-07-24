@@ -1,10 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import Home from './pages/Home';
+import Home from './pages/home';
 import About from './pages/about';
 import Contact from './pages/contect';
 import SignIn from './pages/singin';
 import Navbar from './components/Navbar';
+import Footer from './Components/Footer';
 // import Footer from './components/footer';
 
 // import Card from './pages/card';
@@ -23,7 +24,7 @@ function App() {
           {/* <Route path='/card' element={<Card />} /> */}
 
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
         
       </BrowserRouter>
     </div>

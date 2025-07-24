@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import { DataContext } from "../context/DataContext";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Categories from "./Categories";
 
 function Carousel() {
   const { data, fetchData } = useContext(DataContext);
@@ -22,7 +23,7 @@ function Carousel() {
   };
 
   return (
-    <div className="bg-gradient-to-r from-purple-900 via-indigo-900 to-purple-800 text-white py-10">     
+    <div className="bg-gradient-to-r from-purple-900 via-indigo-900 to-purple-800 text-white py-10 rounded-b-3xl">     
       <div className="container mx-auto px-6">
         <Slider {...settings}>
           {data?.slice(0, 5).map((product) => (
@@ -40,7 +41,7 @@ function Carousel() {
       <img
         src={product.image}
         alt={product.title}
-        className="object-contain w-99 h- transition-transform duration-500 group-hover:scale-110"
+        className="object-contain w-99 h- transition-transform duration-500 group-hover:scale-105"
       />
     </div>
   </div>
@@ -64,21 +65,11 @@ function Carousel() {
           ))}
         </Slider>
 
-        {/* Category Buttons */}
-        {/* <div className="flex justify-center space-x-4 mt-10 ">
-          {["Audio", "Gaming", "Mobile", "TV", "Laptop", "Appliances"].map(
-            (cat) => (
-              <button
-                key={cat}
-                className="px-5 py-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold shadow hover:scale-105 transition"
-              >
-                {cat}
-              </button>
-            )
-          )}
-        </div> */}
+     
       </div>
+      <Categories />
     </div>
+    
   );
 }
 
