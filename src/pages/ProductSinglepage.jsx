@@ -55,12 +55,21 @@ const SingleProduct = () => {
           <p className="text-2xl font-semibold text-blue-600">${product.price}</p>
           
           <div className="flex flex-col sm:flex-row gap-4 mt-4">
-            <button className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-all duration-300">
-              Add to Cart
-            </button>
-            <button className="border border-gray-300 px-6 py-3 rounded-lg hover:bg-gray-100 transition-all duration-300">
+             <button
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              console.log("Adding to cart:", productData);
+              addToCart(productData);
+            }}
+
+            className="mt-2 bg-blue-500 text-white px-4 py-2 rounded-2xl hover:bg-blue-600 transition relative z-20"
+          >
+            Add to Cart
+          </button>
+            {/* <button className="border border-gray-300 px-6 py-3 rounded-lg hover:bg-gray-100 transition-all duration-300">
               Buy Now
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
