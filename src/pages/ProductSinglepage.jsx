@@ -2,8 +2,10 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { DataContext } from "../context/DataContext";
 
+
 const SingleProduct = () => {
   const { id } = useParams();
+
   const { data, fetchData } = useContext(DataContext);
   const [product, setProduct] = useState(null);
 
