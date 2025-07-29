@@ -1,15 +1,12 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { FaFacebookF, FaInstagram, FaTwitter, FaPinterestP } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-
 const Footer = () => {
-   const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
   const handleSubscribe = () => {
-    
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email) {
       setMessage("Please enter your email address.");
@@ -20,57 +17,56 @@ const Footer = () => {
       return;
     }
 
-   
     setMessage("Thank you for subscribing!");
     setEmail("");
   };
+
   return (
-    <footer className="bg-gray-900 text-gray-300 pt-12">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
+    <footer className="bg-gray-900 text-gray-300">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 p-8 space-y-8 md:space-y-0">
         {/* Brand Info */}
-        <div >
-           <Link to="/" className="text-3xl font-bold text-blue-600 m-2">
-          🛍️ ShopNow
-        </Link>
-          <p className="text-sm mb-4">
-            Powering Your World with the Best in Electronics
-          </p>
-          <p className="text-sm">123 Electronics St, Style City, NY 10001</p>
-          <p className="text-sm">Email: support@Zaptro.com</p>
-          <p className="text-sm">Phone: (123) 456-7890</p>
+        <div>
+          <Link to="/" className="text-3xl font-bold text-blue-600 mb-2 block">
+            🛍️ ShopNow
+          </Link>
+          <p className="text-sm mb-4">Powering Your World with the Best in Electronics</p>
+          <address className="not-italic text-sm">
+            123 Electronics St, Style City, NY 10001<br />
+            Email: support@shopnow.com<br />
+            Phone: (123) 456-7890
+          </address>
         </div>
 
         {/* Customer Service */}
         <div>
-          <h3 className="text-xl font-semibold mb-4">Customer Service</h3>
+          <h3 className="text-xl font-semibold mb-4 text-white">Customer Service</h3>
           <ul className="space-y-2 text-sm">
-            <li className="hover:text-red-500 cursor-pointer">Contact Us</li>
-            <li className="hover:text-red-500 cursor-pointer">Shipping & Returns</li>
-            <li className="hover:text-red-500 cursor-pointer">FAQs</li>
-            <li className="hover:text-red-500 cursor-pointer">Order Tracking</li>
-            <li className="hover:text-red-500 cursor-pointer">Size Guide</li>
+            {["Contact Us", "Shipping & Returns", "FAQs", "Order Tracking", "Size Guide"].map((item, index) => (
+              <li key={index} className="hover:text-red-500 cursor-pointer transition">
+                {item}
+              </li>
+            ))}
           </ul>
         </div>
 
         {/* Follow Us */}
         <div>
-          <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
+          <h3 className="text-xl font-semibold mb-4 text-white">Follow Us</h3>
           <div className="flex space-x-4 text-lg">
-            <FaFacebookF className="cursor-pointer hover:text-red-500" />
-            <FaInstagram className="cursor-pointer hover:text-red-500" />
-            <FaTwitter className="cursor-pointer hover:text-red-500" />
-            <FaPinterestP className="cursor-pointer hover:text-red-500" />
+            {[FaFacebookF, FaInstagram, FaTwitter, FaPinterestP].map((Icon, index) => (
+              <a key={index} href="#" aria-label="Social Link">
+                <Icon className="cursor-pointer hover:text-red-500 transition" />
+              </a>
+            ))}
           </div>
         </div>
 
         {/* Newsletter */}
         <div>
-          <h3 className="text-xl font-semibold mb-4">Stay in the Loop</h3>
-          <p className="text-sm mb-4">
-            Subscribe to get special offers, free giveaways, and more.
-          </p>
+          <h3 className="text-xl font-semibold mb-4 text-white">Stay in the Loop</h3>
+          <p className="text-sm mb-4">Subscribe to get special offers, free giveaways, and more.</p>
           <div className="flex">
-             <input
+            <input
               type="email"
               placeholder="Your email address"
               value={email}
@@ -79,11 +75,16 @@ const Footer = () => {
             />
             <button
               onClick={handleSubscribe}
-              className="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-r-lg text-white font-semibold"
+              className="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-r-lg text-white font-semibold transition"
             >
               Subscribe
             </button>
           </div>
+          {message && (
+            <p className={`${message.includes("Thank") ? "text-green-400" : "text-red-400"} mt-2`}>
+              {message}
+            </p>
+          )}
         </div>
       </div>
 

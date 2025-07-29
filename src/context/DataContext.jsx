@@ -23,13 +23,16 @@ export const DataProvider = ({ children }) => {
       console.error("Error fetching data:", error);
     }
   };
+   const categories = data.map((item) => item.category);
 
   useEffect(() => {
     fetchData();
   }, []);
+  
+  
 
   return (
-    <DataContext.Provider value={{ data, setData, fetchData }}>
+    <DataContext.Provider value={{ data, setData, fetchData, categories }}>
       {children}
     </DataContext.Provider>
   );
