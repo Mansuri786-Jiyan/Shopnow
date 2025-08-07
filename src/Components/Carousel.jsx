@@ -22,7 +22,7 @@ function Carousel() {
     arrows: false,
     autoplay: true,
     swipe: true,
-    fade: true,            // Smooth Apple-like fade effect
+    fade: true,            
     adaptiveHeight: true,
     responsive: [
       { breakpoint: 1024, settings: { dots: true, arrows: false } },

@@ -35,7 +35,7 @@ const SingleProduct = () => {
       <div className="max-w-6xl mx-auto bg-white rounded-xl shadow-md overflow-hidden flex flex-col lg:flex-row">
         
         {/* Product Image */}
-        <div className="flex justify-center items-center h-auto  bg-gray-25 rounded-2xl object-fit  ">
+        <div className="flex justify-center items-center h-auto bg-gray-25 rounded-2xl object-fit">
           <img
             src={product.image}
             alt={product.title}
@@ -54,7 +54,10 @@ const SingleProduct = () => {
             {product.description}
           </p>
           
-          <p className="text-2xl font-semibold text-blue-600">${product.price}</p>
+          {/* Updated Price with ₹ symbol and formatting */}
+          <p className="text-2xl font-semibold text-blue-600">
+            ₹{product.price.toLocaleString("en-IN")}
+          </p>
           
           <div className="flex flex-col sm:flex-row gap-4 mt-4">
              <button

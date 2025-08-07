@@ -33,8 +33,8 @@ const Products = ({ productData }) => {
           <p className="text-base sm:text-lg font-semibold text-gray-800 line-clamp-2">
             {productData.title}
           </p>
-          <p className="text-gray-600 font-medium text-sm sm:text-base">
-            ${productData.price}
+          <p className="text-red-400-600 font-medium text-sm sm:text-base">
+            ₹{productData.price}
           </p>
 
           {/* Add to Cart Button (aligned properly below) */}
