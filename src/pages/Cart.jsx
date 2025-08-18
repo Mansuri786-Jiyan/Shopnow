@@ -101,7 +101,7 @@ const Cart = () => {
         <h2 className="text-xl font-semibold">Bill Details</h2>
         <div className="flex justify-between text-sm md:text-base">
           <span>Items total</span>
-          <span>${itemsTotal}</span>
+          <span>₹{itemsTotal}</span>
         </div>
         <div className="flex justify-between text-sm md:text-base">
           <span>Delivery Charge</span>
@@ -109,12 +109,12 @@ const Cart = () => {
         </div>
         <div className="flex justify-between text-sm md:text-base">
           <span>Handling Charge</span>
-          <span>${handlingCharge}</span>
+          <span>₹{handlingCharge}</span>
         </div>
         <div className="border-t my-2"></div>
         <div className="flex justify-between text-lg font-bold">
           <span>Grand Total</span>
-          <span>${grandTotal}</span>
+          <span>₹{grandTotal}</span>
         </div>
         <div className="flex flex-col sm:flex-row gap-2">
           <input
