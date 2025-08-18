@@ -44,7 +44,7 @@ const Cart = () => {
               />
               <div>
                 <h2 className="text-lg font-semibold">{item.title}</h2>
-                <p className="text-red-500 font-semibold">${item.price}</p>
+                <p className="text-red-500 font-semibold">₹{item.price}</p>
               </div>
             </div>
 

@@ -23,7 +23,7 @@ const Categories = () => {
   };
 
   return (
-    <div className="flex justify-center items-center gap-4 mt-10 mb-32 cursor-pointer ">
+    <div  className="flex justify-center items-center gap-4 mt-10 mb-32 cursor-pointer max-md:hidden text-2xl rounded-b-none">
       {uniqueCategories.map((cat) => (
         <button
           key={cat}

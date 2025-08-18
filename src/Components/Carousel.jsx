@@ -42,7 +42,7 @@ function Carousel() {
                   <div className="rounded-full w-56 h-56 md:w-64 md:h-64 flex items-center justify-center overflow-hidden">
                     <img
                       src={product.image}
-                      alt={product.title}
+                      alt="loading"
                       loading="lazy"
                       className="object-contain w-full h-full transform group-hover:scale-110 transition duration-500"
                     />
@@ -72,7 +72,7 @@ function Carousel() {
           ))}
         </Slider>
       </div>
-      <Categories />
+      <Categories className="md:hidden" />
     </div>
   );
 }
